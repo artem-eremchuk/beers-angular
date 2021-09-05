@@ -14,8 +14,4 @@ export class BeerDetailsComponent implements OnInit {
   ngOnInit() {
     this.selectedBeer = this.beersService.getSelectedBeer();
   }
-
-  showSelectedBeer(){
-    console.log(this.selectedBeer)
-  }
 }
