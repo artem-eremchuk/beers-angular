@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+a:active,
+a:hover,
+a {
+  text-decoration: none;
+  color: #666;
+  outline: none;
+}
+
+app-beer-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 70px;
+}
