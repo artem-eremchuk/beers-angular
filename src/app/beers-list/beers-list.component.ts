@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BeersService } from '../../beers-services'
-// import {PrimeIcons} from 'primeng/api';
+import { BeersService } from '../beers-service'; 
 
 @Component({
   selector: 'app-beers-list',
@@ -19,17 +18,15 @@ export class BeersListComponent implements OnInit {
       this.beersList = response;
     })
 
-    // // localStorage.clear()
     const favoriteBeers: any = 
       localStorage.getItem('favoritBeers');
 
     this.favorites = JSON.parse(favoriteBeers);
-
-    // console.log(this.favorites)
   }
 
   getMatch(beer: any){
-    const result = this.favorites.some((favorite: any) => favorite === beer.id)
+    return this.favorites
+      .some((favorite: any) => favorite.id === beer.id)
   }
 
   onSelectedBeer(beer: any){
@@ -55,7 +52,5 @@ export class BeersListComponent implements OnInit {
 
     localStorage
       .setItem('favoritBeers', JSON.stringify(this.favorites));
-
-    // console.log(this.favorites)
   }
 }

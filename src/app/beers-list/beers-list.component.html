@@ -1,0 +1,36 @@
+<table>
+  <thead>
+    <tr>
+      <th class="header__title beer__favorite">Favorites</th>
+      <th class="header__title beer__img">Image</th>
+      <th class="header__title beer__name">Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let beer of beersList">
+      <td class="beer__favorite">
+        <input 
+          type="checkbox" 
+          [checked]="getMatch(beer)"
+          (change)="addToFavorites($event, beer)">
+      </td>
+      <td class="beer__img">
+        <a routerLink="/beers/{{beer['id']}}" (click)="onSelectedBeer(beer)">
+          <img [src]="beer['image_url']"/>
+        </a>
+      </td>
+      <td class="beer__name">       
+        <a routerLink="/beers/{{beer['id']}}" (click)="onSelectedBeer(beer)">
+        {{beer['name']}}
+      </a></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="beers-container">
+  <div class="beers__item" *ngFor="let beer of beersList">
+    <a routerLink="/beers/{{beer['id']}}" (click)="onSelectedBeer(beer)">
+      {{beer['name']}}
+    </a>
+  </div>
+</div>

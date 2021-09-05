@@ -1,0 +1,10 @@
+
+<button routerLink="" class="back__btn"> Back to Beers List</button>
+
+<div class="beer__container">
+  <div class="beer__img"><img [src]="selectedBeer.image_url"></div>
+  <div class="beer__info">
+    <h2 class="beer__info-title">{{selectedBeer.name}}</h2>
+    <p class="beer__info-description">{{selectedBeer.description}}</p>
+  </div>
+</div>
